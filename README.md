@@ -19,8 +19,11 @@ pip install selenium
 ## Usage
 
 Run the script, the input and output files will be created automatically
+
 You can change the sleep timer for a faster output, but you may face the CAPTCHA boss 😧
+
 you can comment out this line if you would like to see the window as it scrapes the links
+
 ```java
 options.add_argument("--headless")
 ```
