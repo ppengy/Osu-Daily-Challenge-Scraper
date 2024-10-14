@@ -30,6 +30,7 @@ options.add_argument("--headless")
 
 ## TODO
 
+ - Fix timer (or remove it)
  - Create a chrome-compatible script
  - Adjust for a specified date range
  - Provide links for the specific difficulty used in the challenge
