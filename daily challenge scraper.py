@@ -38,21 +38,23 @@ def scrape_DailyChal(driver, link):
     print("Beatmap Challenge Link: " + DailyChalLink)
     return DailyChalLink
 
-
+start_time = time.process_time()
 driver = startDriver()
-outputFile = open(r"C:\IHATEONEDRIVE\osuDailyBot\beatmap links.txt", "w")
-inputFile = open(r"temp.txt", "w")
+outputFile = open(r"beatmap links.txt", "w")
+inputFile = open(r"challenge links.txt", "w")
 getlinksToDate(driver, inputFile)
-inputFile = open(r"temp.txt", "r")
+inputFile = open(r"challenge links.txt", "r")
 L = inputFile.readlines()
 for line in L:
     DCLink = line.strip()
     DCDate = DCLink.split("/")[-1]
     print("Current Daily Challenge: " + DCDate)
-    time.sleep(2.5)
+    time.sleep(1.5)
     beatmapLink = scrape_DailyChal(driver, DCLink)
     data = f"{DCDate} {beatmapLink}\n"
     outputFile.write(data)
+
+print("Finished in " + str(time.process_time() - start_time) + " seconds")
 outputFile.close()
 inputFile.close()
 driver.quit()
